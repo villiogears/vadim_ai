@@ -43,7 +43,7 @@ async function findMostSimilarResponse(userInput: string) {
   const bestMatch = similarityPairs[0];
   
   // 類似度が閾値以上の場合のみ応答を返す
-  if (bestMatch.similarity > 0.5) {
+  if (bestMatch.similarity > -10000000000000) {
     return conversationData.conversations[bestMatch.index].output;
   } else {
     return "申し訳ありません。その質問にはお答えできません。";
