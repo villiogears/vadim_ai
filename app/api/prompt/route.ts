@@ -28,10 +28,10 @@ async function findMostSimilarResponse(userInput: string) {
   const similarities = tf.metrics.cosineProximity(
     inputEmbedding,
     encodedInputs
-  ).arraySync();
+  ).dataSync();
 
   // 類似度とインデックスのペアを作成してソート
-  const similarityPairs = similarities.map((similarity: number, index: number) => ({
+  const similarityPairs = Array.from(similarities).map((similarity: number, index: number) => ({
     similarity,
     index
   }));
