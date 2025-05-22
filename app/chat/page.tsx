@@ -15,7 +15,10 @@ export default function ChatPage() {
     try {
       setIsLoading(true);
       // ユーザーメッセージを追加
-      const userMessage = { role: "user", content: input };
+      const userMessage: { role: "user" | "assistant"; content: string } = { 
+        role: "user", 
+        content: input 
+      };
       setMessages(prev => [...prev, userMessage]);
       setInput("");
 
