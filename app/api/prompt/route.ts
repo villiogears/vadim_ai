@@ -50,7 +50,7 @@ async function findMostSimilarResponse(userInput: string) {
   }
 }
 
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<NextResponse> {
   try {
     const body = await req.json();
     
