@@ -23,7 +23,7 @@ async function findMostSimilarResponse(userInput: string) {
   
   // ユーザー入力をエンコード
   const inputEmbedding = await model.embed([userInput]);
-// ...existing code...
+  
   // コサイン類似度の計算
   const similarities = tf.metrics.cosineProximity(
     inputEmbedding,
@@ -48,7 +48,7 @@ async function findMostSimilarResponse(userInput: string) {
   } else {
     return "申し訳ありません。その質問にはお答えできません。";
   }
-// ...existing code...
+}
 
 export async function POST(req: Request) {
   try {
